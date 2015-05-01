@@ -1,0 +1,3 @@
+[submodule "vendors/traytor"]
+	path = vendors/traytor
+	url = https://github.com/sickill/traytor.git

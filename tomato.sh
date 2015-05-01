@@ -32,7 +32,7 @@ function run_tomato_avtive
 
 function run_tomato_timer
 {
-  local seconds=$((5 * $TIMER_MINUTES))
+  local seconds=$((60 * $TIMER_MINUTES))
   (sleep $seconds && \
     notify-send "$TIMER_MESSAGE" && \
     $($TIMER_CALLBACK) && \

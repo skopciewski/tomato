@@ -42,7 +42,7 @@ By default, it uses `notify-send` to display notifications. And you can add
 your cutom callback by editing `~/.tomato/config`.
 For example, to play the sound, set:
 ```bash
-TIMER_CALLBACK="aplay -q ~/.tomato/tomato_beep.wav"
+TIMER_CALLBACK="aplay -q /home/user/.tomato/tomato_beep.wav"
 ```
 
 ## Versioning

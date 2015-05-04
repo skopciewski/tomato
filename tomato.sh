@@ -54,14 +54,10 @@ function run_tomato_timer
 {
   tomato_timer_commands &
   save_pid_to_file $! $TIMER_PID_FILE
-  echo "ob: "$BASHPID
-  echo "o!: "$!
 }
 
 function tomato_timer_commands
 {
-  echo "ib: "$BASHPID
-  echo "i!: "$!
   local seconds=$((60 * $TIMER_MINUTES))
   sleep $seconds && \
     notify-send "$TIMER_MESSAGE" && \

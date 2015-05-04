@@ -62,7 +62,7 @@ function tomato_timer_commands
 {
   echo "ib: "$BASHPID
   echo "i!: "$!
-  local seconds=$((10 * $TIMER_MINUTES))
+  local seconds=$((60 * $TIMER_MINUTES))
   sleep $seconds && \
     notify-send "$TIMER_MESSAGE" && \
     ($TIMER_CALLBACK) && \

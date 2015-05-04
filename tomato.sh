@@ -53,16 +53,20 @@ function run_tomato_avtive
 function run_tomato_timer
 {
   tomato_timer_commands &
+  save_pid_to_file $! $TIMER_PID_FILE
+  echo "ob: "$BASHPID
+  echo "o!: "$!
 }
 
 function tomato_timer_commands
 {
-  local seconds=$((60 * $TIMER_MINUTES))
+  echo "ib: "$BASHPID
+  echo "i!: "$!
+  local seconds=$((10 * $TIMER_MINUTES))
   sleep $seconds && \
     notify-send "$TIMER_MESSAGE" && \
     ($TIMER_CALLBACK) && \
-    ($SCRIPT_PATH) & 
-  save_pid_to_file $! $TIMER_PID_FILE
+    ( ($SCRIPT_PATH) & )
 }
 
 function stop_tomato_idle

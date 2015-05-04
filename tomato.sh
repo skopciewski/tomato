@@ -52,11 +52,16 @@ function run_tomato_avtive
 
 function run_tomato_timer
 {
+  tomato_timer_commands &
+}
+
+function tomato_timer_commands
+{
   local seconds=$((60 * $TIMER_MINUTES))
-  (sleep $seconds && \
+  sleep $seconds && \
     notify-send "$TIMER_MESSAGE" && \
     ($TIMER_CALLBACK) && \
-    ($SCRIPT_PATH)& ) &
+    ($SCRIPT_PATH) & 
   save_pid_to_file $! $TIMER_PID_FILE
 }
 
